@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<title>福利货架</title>
+		<link rel="stylesheet" href="http://cdn.bootcss.com/Swiper/3.4.1/css/swiper.min.css" />
+		<script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+		<script src="http://cdn.bootcss.com/Swiper/3.4.1/js/swiper.min.js"></script>
+		<script>
+			var winWidth = window.innerWidth;
+			var fontSize = winWidth/750*100;
+			var html = document.documentElement;
+			html.style.fontSize = fontSize + "px";
+			window.onresize = function(){
+				var winWidth = window.innerWidth;
+				var fontSize = winWidth/750*100;
+				var html = document.documentElement;
+				html.style.fontSize = fontSize + "px";
+			}
+		</script>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+				border:0;
+				font-family: "微软雅黑";
+			}
+			li{
+				list-style: none;
+			}
+			img{
+				display:block;
+				width:100%;
+			}
+			header{
+				display:block;
+				width:100%;
+				position:relative;
+			}
+			header .get{
+				display:block;
+				position:absolute;
+				top:5.8rem;
+				left:2.7rem;
+				width:2.1rem;
+				height:2.1rem;
+				border-radius: 50%;
+			}
+			.goods{
+				width:100%;
+				height:3.56rem;
+				background:#eec31c;
+				overflow:hidden;
+				position:relative;
+				padding-top:.5rem;
+			}
+			.goods .swiper-slide {
+				width:2.4rem;
+				height:2.4rem;
+				box-sizing:border-box;
+				border:.05rem solid #f4e46a;
+				font-size:.32rem;
+				position:relative;
+			}
+			.swiper-slide span{
+				position:absolute;
+				display:block;
+				width:.7rem;
+				height:.4rem;
+				top:0;
+				left:-0.1rem;
+				background:url(http://og20zwqwb.bkt.clouddn.com/goodstips.png) no-repeat;
+				background-size:.7rem .4rem;
+			}
+			.rule{
+				background-color:#eec31c
+			}
+			.rule .title{
+				width:100%;
+				height:.74rem;
+				background:url(http://og20zwqwb.bkt.clouddn.com/rules_bg.png) no-repeat;
+				background-size:7.5rem;
+				background-position-y:center;
+				color:#fff;
+				text-align:center;
+				line-height:.74rem;
+				font-size:.34rem;
+			}
+			.mask{
+				position:fixed;
+				top:0;
+				left:0;
+				right:0;
+				bottom:0;
+				background:#000;
+				z-index: 99;
+				opacity: 0.6;
+			}
+			.alert{
+				width:6.5rem;
+				height:5.5rem;
+				border-radius:.1rem;
+				position:fixed;
+				left:50%;
+				top:50%;
+				transform: translate(-50% , -50%);
+				-ms-transform:translate(-50% , -50%); 	
+				-moz-transform:translate(-50% , -50%); 	
+				-webkit-transform:translate(-50% , -50%);
+				-o-transform:translate(-50% , -50%); 	
+				z-index: 100;
+				background:#fff;
+				
+			}
+			.alert .close{
+				width:.6rem;
+	            height:.94rem;
+	            display:block;
+	            position:absolute;
+	            right:.3rem;
+	            top:-0.93rem;
+	            /*background-color:#fff;
+	            background:url(http://og20zwqwb.bkt.clouddn.com/1yht_close.png) no-repeat;
+	            background-size:.6rem .94rem;*/
+			}
+			
+			.login_title{
+				width:100%;
+				font-size:.32rem;
+				line-height:2rem;
+				height:2rem;
+				text-align:center;
+			}
+			.login_input{
+				width:5.7rem;
+				height:.9rem;
+				line-height:.9rem;
+				margin:0 auto;
+				background:#ececec;
+				padding-top:.1rem;
+				box-sizing: border-box;
+			}
+			.login_input input{
+				
+				display:block;
+				width:5.7rem;
+				height:.7rem;
+				line-height:.7rem;
+				background:#ececec;
+				text-align:center;
+				border-radius: .1rem;
+				font-size:.32rem;
+				
+			}
+			.login_get{
+				position:absolute;
+				bottom:0;
+				left:0;
+				width:100%;
+				height:.9rem;
+				line-height:.9rem;
+				text-align:center;
+				color:#fff;
+				font-size:.32rem;
+				background:#F13B51;
+				border-radius: 0 0 .1rem .1rem;
+			}
+			.myWelfare{
+				padding-top:.2rem;
+			}
+			.myWelfare_title{
+				height:.74rem;
+				font-size:.34rem;
+				line-height:.74rem;
+				text-align:center;
+				color:#333;
+			}
+			.QRcode{
+				width:2.58rem;
+				height:2.58rem;
+				margin:0 auto;
+			}
+			.QRcode img{
+				width:100%;
+				height:auto;
+			}
+			.myWelfare_infos{
+				text-align:center;
+				margin-top:.2rem;
+				font-size:.28rem;
+				color:#666;
+			}
+			.myWelfare_down{
+				width:100%;
+				height:.9rem;
+				line-height:.9rem;
+				text-align:center;
+				color:#fff;
+				font-size:.32rem;
+				background:#F13B51;
+				border-radius: 0 0 .1rem .1rem;
+				position:absolute;
+				bottom:0;
+				left:0;
+			}
+			.imgbox{
+				width:2.58rem;
+				height:2.58rem;
+				margin:.66rem auto 0 auto;
+			}
+			.imgbox img{
+				display:block;
+				width:100%;
+			}
+			.words{
+				text-align:center;
+				color:#666;
+				margin-top:.36rem;
+				font-size:.28rem;
+			}
+			.btn{
+				width:100%;
+				height:.9rem;
+				line-height:.9rem;
+				text-align:center;
+				color:#fff;
+				font-size:.32rem;
+				background:#F13B51;
+				border-radius: 0 0 .1rem .1rem;
+				position:absolute;
+				bottom:0;
+				left:0;
+			}
+			
+		</style>
+	</head>
+		
+	<body>
+		<div class="wrapper">
+			<header>
+				<img src="http://og20zwqwb.bkt.clouddn.com/goodsShelfhbg.png" alt="" style="width:100%;display:block;"/>
+				<span class="get"></span>
+			</header>
+			<div class="goods">
+				 <div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide"><span></span></div>
+			            <div class="swiper-slide"><span></span></div>
+			            <div class="swiper-slide"><span></span></div>
+			            <div class="swiper-slide"><span></span></div>
+			            <div class="swiper-slide"><span></span></div>
+			            <div class="swiper-slide"><span></span></div>
+			            <div class="swiper-slide"><span></span></div>
+			        </div>
+			        <!-- Add Pagination -->
+			        <!--<div class="swiper-pagination"></div>-->
+			    </div>
+			</div>
+			<div class="rule">
+				<h3 class="title">活动规则</h3>
+			</div>
+			<div class="mask" style="display:none;"></div>
+			<div class="alert" style="display:none;">
+				<span class="close"><img src="http://og20zwqwb.bkt.clouddn.com/1yht_close.png" alt="" style="width:100%; display:block;"/></span>
+				<div class="login" style="display:none;">
+					<div class="login_title">登录</div>
+					<div class="login_input"><input type="number" placeholder="请输入手机号码"/></div>
+					<button class="login_get">领取福利</button>
+				</div>
+				<div class="myWelfare" style="display:none;">
+					<div class="myWelfare_title">我的福利</div>
+					<div class="QRcode"><img src="http://og20zwqwb.bkt.clouddn.com/QRcode_download.jpg" alt="" /></div>
+					<p class="myWelfare_infos">只有真真海淘注册用户才可以领取哦～</p>
+					<button class="myWelfare_down">立即安装真真海淘</button>
+				</div>
+				<div class="winning" style="display:none;">
+					<div class="imgbox">
+						<img src="http://og20zwqwb.bkt.clouddn.com/winning.png" alt="" />
+					</div>
+					<p class="words">今天领取成功，别忘记明天再来哦～</p>
+					<button class="btn">确定</button>
+				</div>
+				<div class="notwinning" style="display:none;">
+					<div class="imgbox">
+						<img src="http://og20zwqwb.bkt.clouddn.com/notWinning.png" alt="" />
+					</div>
+					<p class="words">今天运气有点差，明天再来吧～</p>
+					<button class="btn">确定</button>
+				</div>
+				<div class="alreadyGet" style="display:none;">
+					<div class="imgbox">
+						<img src="http://og20zwqwb.bkt.clouddn.com/alreadyGet.png" alt="" />
+					</div>
+					<p class="words">今天领过福利啦，明天再来吧～</p>
+					<button class="btn">确定</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$('.get').on('click',function(){
+			console.log(1111);
+			$(this).css('background','#000');
+			$(this).css('opacity','0.2');
+		});
+		
+		 var swiper = new Swiper('.swiper-container', {
+//	        pagination: '.swiper-pagination',
+	        slidesPerView: 3,
+	        paginationClickable: true,
+	        spaceBetween: 10
+	    });
+	</script>
+</html>
