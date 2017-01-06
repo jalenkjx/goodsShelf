@@ -35,8 +35,28 @@
 			}
 			header{
 				display:block;
+				height:10.56rem;
 				width:100%;
 				position:relative;
+				background:url(http://og20zwqwb.bkt.clouddn.com/goodshelf.png) no-repeat;
+				background-size:7.5rem;
+				padding-top:3.5rem;
+				box-sizing: border-box;
+			}
+			header .good{
+				width:100%;
+				box-sizing: border-box;
+				padding-left:.3rem;
+				padding-right:.48rem;
+				overflow:hidden;
+				
+			}
+			.good li{
+				float:left;
+				width:2rem;
+				margin-left:.18rem;
+				height:2rem;
+				margin-bottom:.2rem;
 			}
 			header .get{
 				display:block;
@@ -86,6 +106,12 @@
 				text-align:center;
 				line-height:.74rem;
 				font-size:.34rem;
+			}
+			.rule p{
+				font-size:.3rem;
+				color:#fff;
+				line-height:.6rem;
+				padding:0 .2rem;
 			}
 			.mask{
 				position:fixed;
@@ -176,10 +202,43 @@
 				text-align:center;
 				color:#333;
 			}
+			.welfareGood{
+				padding-top:.2rem;
+			}
+			.welfareGood_title{
+				height:.74rem;
+				font-size:.34rem;
+				line-height:.74rem;
+				text-align:center;
+				color:#333;
+			}
+			.welfareGood_info{
+				width:5.0rem;
+				height:2.4rem;
+				margin:0 auto;
+				box-sizing: border-box;
+				border:.05rem solid #f4e46a;
+				margin-top:.2rem;
+			}
+			.welfareGood_info .goodImg{
+				width:2.3rem;
+				height:2.3rem;
+				box-sizing: border-box;
+
+				float:left;
+			}
+			.welfareGood_info .goodinfor{
+				width:2.4rem;
+				height:2.3rem;
+				box-sizing: border-box;
+				float:left;
+				margin-left:.2rem;
+			}
 			.QRcode{
 				width:2.58rem;
 				height:2.58rem;
 				margin:0 auto;
+				
 			}
 			.QRcode img{
 				width:100%;
@@ -239,10 +298,21 @@
 	<body>
 		<div class="wrapper">
 			<header>
-				<img src="http://og20zwqwb.bkt.clouddn.com/goodsShelfhbg.png" alt="" style="width:100%;display:block;"/>
-				<span class="get"></span>
+				<ul class="good">
+					<li><img src="http://og20zwqwb.bkt.clouddn.com/goodshelf01.png" alt="" /></li>
+					<li><img src="http://og20zwqwb.bkt.clouddn.com/goodshelf02.png" alt="" /></li>
+					<li><img src="http://og20zwqwb.bkt.clouddn.com/goodshelf03.png" alt="" /></li>
+					<li><img src="http://og20zwqwb.bkt.clouddn.com/goodshelf04.png" alt="" /></li>
+					<li class="get_btn"><img src="http://og20zwqwb.bkt.clouddn.com/shelf_btn.png" alt="" style="display:block; width:100%;"/></li>
+					<li><img src="http://og20zwqwb.bkt.clouddn.com/goodshelf05.png" alt="" /></li>
+					<li><img src="http://og20zwqwb.bkt.clouddn.com/goodshelf06.png" alt="" /></li>
+					<li><img src="http://og20zwqwb.bkt.clouddn.com/goodshelf07.png" alt="" /></li>
+					<li><img src="http://og20zwqwb.bkt.clouddn.com/goodshelf08.png" alt="" /></li>
+				</ul>
+				<!--<img src="http://og20zwqwb.bkt.clouddn.com/goodsShelfhbg.png" alt="" style="width:100%;display:block;"/>-->
+				
 			</header>
-			<div class="goods">
+			<!--<div class="goods">
 				 <div class="swiper-container">
 			        <div class="swiper-wrapper">
 			            <div class="swiper-slide"><span></span></div>
@@ -253,12 +323,17 @@
 			            <div class="swiper-slide"><span></span></div>
 			            <div class="swiper-slide"><span></span></div>
 			        </div>
-			        <!-- Add Pagination -->
-			        <!--<div class="swiper-pagination"></div>-->
 			    </div>
-			</div>
+			</div>-->
 			<div class="rule">
 				<h3 class="title">活动规则</h3>
+				<p>1.新注册用户可以领取免费区的任意一件商品</p>
+				<p>2.领取的免费区商品需与活动页弹出的商品一致</p>
+				<p>3.每人每天限领取免费区商品数量为一件</p>
+				<p>4.已注册用户每天参与活动亦有机会获得免费区任意一件商品</p>
+				<p>5.活动时间：2017年1月6日—2017年1月27日</p>
+				<p>6.客服电话：010-56192212</p>
+				<p>7.此活动最终的解释权归真真海淘官方所有</p>
 			</div>
 			<div class="mask" style="display:none;"></div>
 			<div class="alert" style="display:none;">
@@ -266,7 +341,7 @@
 				<div class="login" style="display:none;">
 					<div class="login_title">登录</div>
 					<div class="login_input"><input type="number" placeholder="请输入手机号码"/></div>
-					<button class="login_get">领取福利</button>
+					<button class="login_get">验证手机号</button>
 				</div>
 				<div class="myWelfare" style="display:none;">
 					<div class="myWelfare_title">我的福利</div>
@@ -279,37 +354,255 @@
 						<img src="http://og20zwqwb.bkt.clouddn.com/winning.png" alt="" />
 					</div>
 					<p class="words">今天领取成功，别忘记明天再来哦～</p>
-					<button class="btn">确定</button>
+					<button class="btn close_btn">确定</button>
 				</div>
 				<div class="notwinning" style="display:none;">
 					<div class="imgbox">
 						<img src="http://og20zwqwb.bkt.clouddn.com/notWinning.png" alt="" />
 					</div>
 					<p class="words">今天运气有点差，明天再来吧～</p>
-					<button class="btn">确定</button>
+					<button class="btn close_btn">确定</button>
 				</div>
 				<div class="alreadyGet" style="display:none;">
 					<div class="imgbox">
 						<img src="http://og20zwqwb.bkt.clouddn.com/alreadyGet.png" alt="" />
 					</div>
-					<p class="words">今天领过福利啦，明天再来吧～</p>
-					<button class="btn">确定</button>
+					<p class="words">亲，谢谢参与互动哦，明天再来吧～</p>
+					<button class="btn close_btn">确定</button>
+				</div>
+				<div class="welfareGood" style="display:none;">
+					<div class="welfareGood_title">我的福利</div>
+					<div class="welfareGood_info">
+						<div class="goodImg">
+							<img src="" alt="" />
+						</div>
+						<div class="goodinfor">
+							<p data-id="" style="line-height:.6rem;font-size:.3rem;height:1.2rem; overflow:hidden; text-align: center;box-sizing: border-box;padding-right:.1rem;"></p>
+							<button class="change" style="display:block;width:1.9rem; height:.62rem; border-radius: .3rem; background-color: #F4E46A; margin:.2rem auto;">换一个</button>
+						</div>
+					</div>
+					<p style="text-align:center; color:#666; font-size:.3rem;margin-top:.1rem;">请从货架上领走相应的福利</p>
+					<button class="btn welfareGood_btn" >领走福利</button>
 				</div>
 			</div>
 		</div>
 	</body>
 	<script>
-		$('.get').on('click',function(){
-			console.log(1111);
-			$(this).css('background','#000');
-			$(this).css('opacity','0.2');
-		});
-		
-		 var swiper = new Swiper('.swiper-container', {
-//	        pagination: '.swiper-pagination',
-	        slidesPerView: 3,
-	        paginationClickable: true,
-	        spaceBetween: 10
-	    });
+	var flag = 0;
+	//var api = 'http://zhenzhen.s1.natapp.cc/zzht/';
+	var api = 'http://service.myzhenzhen.com/zzht/';
+	//var imgLink = 'http://o6uda1nl0.bkt.clouddn.com/';//内网
+	var imgLink = 'http://img.myzhenzhen.com/';//外网
+	$.ajax({
+		type:'get',
+		url:api+'v1/api/shelf/getData?actId=1234',
+		async:false,
+		success:function(res){
+			console.log(res.datas);
+			//data为商品列表
+			var data = res.datas;
+			//点击领取按钮；
+			$('.get_btn','.good').on('click',function(e){
+				e.preventDefault();	
+				showAlert();
+				$('.login').css('display','block');
+			});
+			//点击关闭弹窗
+			$('.close').on('click',function(){
+				hiddenAlert();
+			});
+			$('.close_btn').on('click',function(){
+				hiddenAlert();
+			});
+			//点击换一个按钮换奖品
+			$('.change').on('click',function(){
+				var random = parseInt(Math.random()*8);
+				$('img','.goodImg').attr('src',imgLink+data[random].goodsImages[2].imgName)
+				$('p','.goodinfor').html(data[random].name);
+				$('p','.goodinfor').attr('data-id',data[random].goodsId);
+			})
+			//点击验证手机号，
+			$('.login_get').on('click',function(){
+				var _this = $(this);
+				if($('input','.login_input').val()!=''){
+//					_this.html('正在验证...');
+					$.ajax({
+						url:api+"v1/api/users/check/phone",
+						type:'post',
+						headers:{
+							'Content-Type': 'application/x-www-form-urlencoded'
+						},
+						data:{
+							'phone':$('input','.login_input').val()
+						},
+						success:function(resp){
+							
+							
+							console.log(resp);
+							if(resp.datas==0){
+								$('.myWelfare').css('display','block').siblings('div').css('display','none');
+							}else{
+								
+								//判断是否为第一次领取接口
+								$.ajax({
+									type:"get",
+									url:api+"v1/api/shelf/initAdd?actId=1234&phone="+$('input','.login_input').val(),
+									async:false,
+									success:function(respo){
+										console.log(respo);
+										//判断是否为第一次领取；
+										if(respo.datas.isFirst==1){
+											var random = parseInt(Math.random()*8);
+											console.log(random);
+											$('.welfareGood').css('display','block').siblings('div').css('display','none');
+											$('img','.goodImg').attr('src',imgLink+data[random].goodsImages[2].imgName)
+											$('p','.goodinfor').html(data[random].name);
+											$('p','.goodinfor').attr('data-id',data[random].goodsId);
+											$('.welfareGood_btn').on('click',function(){
+												var goodid = data[random].goodsId;
+												console.log(goodid);
+												var addParam = JSON.stringify(
+													{ 
+														"shelf": 
+														{ 
+															"actId":1234, 
+															"goodsId":goodid, 
+															"phone":$('input','.login_input').val()
+														} 
+													})
+												
+												$.ajax({
+													url:api+'v1/api/shelf/add',
+													type:'post',
+													data:addParam,
+													headers:{
+														'Content-Type': 'application/json'
+													},
+													success:function(respon){
+														console.log(respon)
+														if(respon.res_code==200){
+															$('.winning').css('display','block').siblings('div').css('display','none');
+														}else if(respon.res_code==22022){
+															alert('手机号码未注册，请先注册后再领取');
+														}else if(respon.res_code==210000){
+															alert('今天已经领取过，请明天再来');
+														}
+													}
+												})//ajax
+											})//click
+										}else{
+											if(respo.datas.isGetToday==0){
+												//非第一次20%概率；
+												var random = parseInt(Math.random()*40);
+												console.log(random)
+												//中奖
+												if(random<8){
+													$('.welfareGood').css('display','block').siblings('div').css('display','none');
+													$('img','.goodImg').attr('src',imgLink+data[random].goodsImages[2].imgName)
+													$('p','.goodinfor').html(data[random].name);
+													$('p','.goodinfor').attr('data-id',data[random].goodsId);
+													$('.welfareGood_btn').on('click',function(){
+														var goodid = data[random].goodsId;
+														console.log(goodid);
+														var addParam = JSON.stringify(
+															{ 
+																"shelf": 
+																{ 
+																	"actId":1234, 
+																	"goodsId":goodid, 
+																	"phone":$('input','.login_input').val()
+																} 
+															})
+														
+														$.ajax({
+															url:api+'v1/api/shelf/add',
+															type:'post',
+															data:addParam,
+															headers:{
+																'Content-Type': 'application/json'
+															},
+															success:function(respon){
+																if(respon.res_code==200){
+																	$('.winning').css('display','block').siblings('div').css('display','none');
+																}else if(respon.res_code==22022){
+																	alert('手机号码未注册，请先注册后再领取');
+																}else if(respon.res_code==210000){
+																	alert('今天已经领取过，请明天再来');
+																}
+															}
+														})//ajax
+													})//click
+												}else{
+													//未中奖
+													$('.notwinning').css('display','block').siblings('div').css('display','none');
+													var addParam = JSON.stringify(
+														{ 
+															"shelf": 
+															{ 
+																"actId":1234, 
+																"goodsId":0, 
+																"phone":$('input','.login_input').val()
+															} 
+														})
+													
+													$.ajax({
+														url:api+'v1/api/shelf/add',
+														type:'post',
+														data:addParam,
+														headers:{
+															'Content-Type': 'application/json'
+														},
+														success:function(respon){
+															console.log(respon);
+//															if(respon.res_code==200){
+//																$('.winning').css('display','block').siblings('div').css('display','none');
+//															}else if(respon.res_code==22022){
+//																alert('手机号码未注册，请先注册后再领取');
+//															}else if(respon.res_code==210000){
+//																alert('今天已经领取过，请明天再来');
+//															}
+														}
+													})//ajax
+												}
+												//今天已经领取过，请明天再来
+											}else{
+												$('.alreadyGet').css('display','block').siblings('div').css('display','none');
+											}
+											
+										}
+									}
+								});//ajax
+							}
+						}
+					});
+				}
+				
+			});
+		}
+	});
+	function showAlert(){
+		$('.mask').css('display','block');
+		$('.alert').css('display','block');
+		flag = 1;
+	}
+	function hiddenAlert(){
+		$('.mask').css('display','none');
+		$('.alert').css('display','none');
+		$('.login').css('display','block').siblings('div').css('display','none');
+		flag = 0;
+	}
+	$(document).on('touchmove',function(e){
+		if(flag==1){
+			e.preventDefault();
+		}
+	});
+
+	$('.myWelfare_down').on('click',function(){
+		window.location.href = 'http://dwz.cn/3JaeDJ';	
+	});
+//		 var swiper = new Swiper('.swiper-container', {
+//	        slidesPerView: 3,
+//	        spaceBetween: 10
+//	    });
 	</script>
 </html>
